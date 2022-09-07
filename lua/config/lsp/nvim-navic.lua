@@ -36,10 +36,12 @@ function M.after()
         {
             callback = function()
                 if not vim.bo.buflisted or vim.tbl_contains(M.ignore_filetype, vim.bo.filetype) then
-                    vim.opt_local.winbar = ""
+                    --vim.opt_local.winbar = ""
+                    vim.opt_local.statusline = ""
                     return
                 end
-                vim.opt_local.winbar = "%{%v:lua.require('nvim-navic').get_location()%}"
+                --vim.opt_local.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+                vim.opt_local.statusline = "%{%v:lua.require'nvim-navic'.get_location()%}"
             end,
         }
     )

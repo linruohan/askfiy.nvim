@@ -8,7 +8,7 @@ local M = {
         "nvim-treesitter.parsers",
     },
 }
-
+require("nvim-treesitter.install").prefer_git = true
 function M.download_source_settings()
     local default_source = "https://github.com/"
 
